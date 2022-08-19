@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Thu Feb 17 09:45:18 2022 as: nmap -Pn -p- -oX example.xml -&#45;open 192.168.1.104,105,114,115,137,140 -->
+<nmaprun scanner="nmap" args="nmap -Pn -p- -oX example.xml -&#45;open 192.168.1.104,105,114,115,137,140" start="1645112718" startstr="Thu Feb 17 09:45:18 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1645112718" endtime="1645112885"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.1.104" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65531">
+<extrareasons reason="conn-refused" count="65531" proto="tcp" ports="1-8008,8010-37239,37241-50635,50637-59999,60001-65535"/>
+</extraports>
+<port protocol="tcp" portid="8009"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ajp13" method="table" conf="3"/></port>
+<port protocol="tcp" portid="37240"><state state="open" reason="syn-ack" reason_ttl="0"/></port>
+<port protocol="tcp" portid="50636"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="tcp" portid="60000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+</ports>
+<times srtt="2201" rttvar="106" to="100000"/>
+</host>
+<host starttime="1645112718" endtime="1645112876"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.1.105" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65489">
+<extrareasons reason="conn-refused" count="65489" proto="tcp" ports="1-3116,3118-4857,4859-4999,5001-6407,6409-6999,7001-7099,7101-7102,7104-8746,8748-9847,9849-10585,10587-15015,15017-15428,15430-20740,20742-22889,22891-32203,32205-35236,35238-36423,36425-36882,36884-37053,37055-42298,42300-43210,43212-43580,43582-43680,43682-44306,44308-44376,44378-44721,44723-48277,48279-48297,48299-48798,48800-49151,49154-50695,50697-53063,53065-53759,53761-54892,54894-55544,55546-55822,55824-56595,56597-56605,56607-58860,58862-62077,62079-63166,63168-63387,63389-64432,64434-64823,64825-65013,65015-65535"/>
+</extraports>
+<extraports state="filtered" count="39">
+<extrareasons reason="no-response" count="39" proto="tcp" ports="3117,4858,6408,7103,8747,9848,10586,15016,15429,20741,22890,32204,35237,36424,36883,37054,42299,43211,43581,43681,44307,44377,44722,48278,48298,48799,50696,53760,54893,55545,55823,56596,56606,58861,63167,63388,64433,64824,65014"/>
+</extraports>
+<port protocol="tcp" portid="5000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="upnp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="afs3-fileserver" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7100"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="font-service" method="table" conf="3"/></port>
+<port protocol="tcp" portid="49152"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="tcp" portid="49153"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="tcp" portid="53064"><state state="open" reason="syn-ack" reason_ttl="0"/></port>
+<port protocol="tcp" portid="62078"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="iphone-sync" method="table" conf="3"/></port>
+</ports>
+<times srtt="737" rttvar="52" to="100000"/>
+</host>
+<host starttime="1645112718" endtime="1645112881"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.1.114" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65530">
+<extrareasons reason="conn-refused" count="65530" proto="tcp" ports="1-1399,1401-1409,1411-1442,1444-1842,1844-6999,7001-65535"/>
+</extraports>
+<port protocol="tcp" portid="1400"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="cadkey-tablet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1410"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="hiq" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ies-lm" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1843"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="netopia-vo5" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="afs3-fileserver" method="table" conf="3"/></port>
+</ports>
+<times srtt="4437" rttvar="1070" to="100000"/>
+</host>
+<host starttime="1645112885" endtime="1645112959"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.1.137" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="conn-refused" count="65533" proto="tcp" ports="1-57860,57862-62077,62079-65535"/>
+</extraports>
+<port protocol="tcp" portid="57861"><state state="open" reason="syn-ack" reason_ttl="0"/></port>
+<port protocol="tcp" portid="62078"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="iphone-sync" method="table" conf="3"/></port>
+</ports>
+<times srtt="5135" rttvar="1119" to="100000"/>
+</host>
+<host starttime="1645112885" endtime="1645112922"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.1.140" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65533">
+<extrareasons reason="conn-refused" count="65533" proto="tcp" ports="1-4999,5001-6999,7001-65535"/>
+</extraports>
+<port protocol="tcp" portid="5000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="upnp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7000"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="afs3-fileserver" method="table" conf="3"/></port>
+</ports>
+<times srtt="171" rttvar="82" to="100000"/>
+</host>
+<runstats><finished time="1645112959" timestr="Thu Feb 17 09:49:19 2022" summary="Nmap done at Thu Feb 17 09:49:19 2022; 6 IP addresses (6 hosts up) scanned in 240.74 seconds" elapsed="240.74" exit="success"/><hosts up="6" down="0" total="6"/>
+</runstats>
+</nmaprun>
