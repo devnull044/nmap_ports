@@ -12,15 +12,18 @@ def read_masscan(xml_data):
 		if child.tag == "host":
 			if child[0].attrib['addr'] not in masscan_data.keys():
 				masscan_data[child[0].attrib['addr']] = []
-				for port in child[1]:
-					if port[0].attrib['state'] == "open":
-						tmp_port = [port.attrib['protocol'],port.attrib['portid'],port[0].attrib['state']]
-						masscan_data[child[0].attrib['addr']].append(tmp_port)
+				if child[0].attrib['addrtype'] not in masscan_data[child[0].attrib['addr']]:
+					masscan_data[child[0].attrib['addr']].append(child[0].attrib['addrtype'])
+
+				if child[1][0][0].attrib['state'] == "open":
+					tmp_port = [child[1][0].attrib['protocol'],child[1][0].attrib['portid'],child[1][0][0].attrib['state']]
+					masscan_data[child[0].attrib['addr']].append(tmp_port)
 			else:
-				for port in child[1]:
-					if port[0].attrib['state'] == "open":
-						tmp_port = [port.attrib['protocol'],port.attrib['portid'],port[0].attrib['state']]
-						masscan_data[child[0].attrib['addr']].append(tmp_port)
+				if child[1][0][0].attrib['state'] == "open":
+					tmp_port = [child[1][0].attrib['protocol'],child[1][0].attrib['portid'],child[1][0][0].attrib['state']]
+					masscan_data[child[0].attrib['addr']].append(tmp_port)
+
+	print(masscan_data)
 
 	return masscan_data
 
@@ -35,11 +38,13 @@ def convert2nmap(data):
 			c2n_host = ET.SubElement(c2n_root, "host")
 			ET.SubElement(c2n_host, "status", state="up")
 			ET.SubElement(c2n_host, "address", addr=host)
+			ET.SubElement(c2n_host, "addrtype", addrtype=data[host][0])
 			c2n_ports = ET.SubElement(c2n_host, "ports")
 			#setting port protocol and port
 			for ports in data[host]:
-				c2n_port = ET.SubElement(c2n_ports, "port", protocol=ports[0], portid=ports[1])
-				ET.SubElement(c2n_port, "state", state=ports[2])
+				if isinstance(ports, list):
+					c2n_port = ET.SubElement(c2n_ports, "port", protocol=ports[0], portid=ports[1])
+					ET.SubElement(c2n_port, "state", state=ports[2])
 	c2n_rs = ET.SubElement(c2n_root, "runstats")
 	ET.SubElement(c2n_rs, "finished", time=data['end'])
 	#indenting xml
