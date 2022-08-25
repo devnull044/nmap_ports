@@ -1,6 +1,6 @@
 This does a couple of things:
 
 	- Converts masscan XML format to nmap XML
-	- Allows you to feed NMAP already discovered ports via an nmap XML file
+	- Allows you to feed NMAP already discovered hosts and ports via an nmap XML file
 
 
