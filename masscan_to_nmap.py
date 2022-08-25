@@ -23,7 +23,7 @@ def read_masscan(xml_data):
 					tmp_port = [child[1][0].attrib['protocol'],child[1][0].attrib['portid'],child[1][0][0].attrib['state']]
 					masscan_data[child[0].attrib['addr']].append(tmp_port)
 
-	#print(masscan_data)
+	print(masscan_data)
 
 	return masscan_data
 
@@ -37,8 +37,8 @@ def convert2nmap(data):
 		if host != "start" and host != "end":
 			c2n_host = ET.SubElement(c2n_root, "host")
 			ET.SubElement(c2n_host, "status", state="up")
-			ET.SubElement(c2n_host, "address", addr=host)
-			ET.SubElement(c2n_host, "addrtype", addrtype=data[host][0])
+			c2n_addr = ET.SubElement(c2n_host, "address", addr=host)
+			c2n_addr.set("addrtype", data[host][0])
 			c2n_ports = ET.SubElement(c2n_host, "ports")
 			#setting port protocol and port
 			for ports in data[host]:
