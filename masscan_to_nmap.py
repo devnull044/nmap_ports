@@ -23,7 +23,7 @@ def read_masscan(xml_data):
 					tmp_port = [child[1][0].attrib['protocol'],child[1][0].attrib['portid'],child[1][0][0].attrib['state']]
 					masscan_data[child[0].attrib['addr']].append(tmp_port)
 
-	print(masscan_data)
+	#print(masscan_data)
 
 	return masscan_data
 
