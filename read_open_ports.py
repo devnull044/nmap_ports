@@ -9,7 +9,7 @@ def run_nmap(scan_data,nmap_args):
     #run nmap with ports for each host
     #temp xml files will be deleted
     for host in scan_data:
-        if os.path.exists("%_temp.xml" % (host)):
+        if os.path.exists("%s_temp.xml" % (host)):
             print("Skipping %s...." % (host))
             continue
         print("nmap -p"+",".join(scan_data[host])+" %s %s -oX %s_temp.xml" % (nmap_args, host, host))
