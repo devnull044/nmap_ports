@@ -20,9 +20,12 @@ def merge_results():
         if each.endswith("_temp.xml"):
             xml_files.append(each)
     MX.main(xml_files)
-    #delete temp files
+    #move temp files to archive
+    #os.system('tar -cf temp_files.tar -T ')
     for each in xml_files:
+        os.system('tar -r --file=temp_files.tar %s' % (each))
         os.remove(each)
+
 
 def parse_nmap_xml(xml_data):
     print("Parsing ports for host(s)...")
